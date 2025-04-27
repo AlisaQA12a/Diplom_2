@@ -4,10 +4,8 @@ import requests
 
 from data import DataIngredients
 from helpers import generate_email, generate_password, generate_username
-from faker import Faker
 from urls import Urls
 
-faker = Faker()
 
 
 @allure.step ("Генерируем данные пользователя")

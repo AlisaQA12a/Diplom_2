@@ -2,7 +2,7 @@ import allure
 import pytest
 import requests
 
-from data import DataMessage
+from data import DataMessage, ValidUser
 from urls import Urls
 from helpers import generate_username, generate_email, generate_password
 
@@ -26,9 +26,9 @@ class TestCreateUser:
     @allure.description("Передаем данные существующего пользователя")
     def test_create_same_user(self):
         payload = {
-            "email": "fluffy1134@bk.ru",
-            "password": "fluffy1134",
-            "name": "fluffy",
+            "email": ValidUser.email,
+            "password": ValidUser.password,
+            "name": ValidUser.name,
         }
         response = requests.post(
             Urls.CREATE_USER,
